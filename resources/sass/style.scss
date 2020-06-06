@@ -1,0 +1,297 @@
+@import 'form';
+
+// media-query sass maps
+$mobile-small:( min: 0px, max: 450px );
+$mobile-large:( min: 451px, max: 540px );
+$tablet:( min: 541px, max: 768px );
+$desktop-small:( min: 769px, max: 1025px );
+$desktop-medium:( min: 1025px, max: 1200px );
+$desktop-large:( min: 1201px );
+
+// media query mixin
+@mixin mobile-small {
+    @media (max-width: #{map-get($mobile-small, max)}) {
+        @content;
+    }
+}
+@mixin mobile-large {
+    @media (min-width: #{map-get($mobile-large, min)}) and (max-width: #{map-get($mobile-large, max)}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{map-get($tablet, min)}) and (max-width: #{map-get($tablet, max)}) {
+        @content;
+    }
+}
+@mixin desktop-small {
+    @media (min-width: #{map-get($desktop-small, min)}) and (max-width: #{map-get($desktop-small, max)}) {
+        @content;
+    }
+}
+@mixin desktop-medium {
+    @media (min-width: #{map-get($desktop-medium, min)}) and (max-width: #{map-get($desktop-medium, max)}) {
+        @content;
+    }
+}
+@mixin desktop-large {
+    @media (min-width: #{map-get($desktop-large, min)}) {
+        @content;
+    }
+}
+
+// function that points to needed folders
+@function img-dir($name){
+    @return url("/storage/images/#{$name}");
+}
+
+
+// SET FONT-COLOR BASED ON BACKGROUND
+@function set-font-color($color){
+    @if lightness($color)>60{
+        @return #333;
+    } @else {
+        @return #fff;
+    }
+}
+
+// set background and text color
+@mixin set-bg($color) {
+    background: $color;
+    color: set-font-color($color);
+}
+
+$p-color1: #58bc82;
+$p-color2: #4e0250;
+$p-color3: #645986;
+$p-color4: #db5461;
+$p-color5: #fb8b24;
+$p-color6: #e5bc26;
+$p-color7: #6db1bf;
+$p-color8: #f39a9d;
+$p-color9: #aea3b0;
+$p-color10: #e7e6f7;
+$p-color11: #efd9ce;
+
+$base-color: $p-color1;
+$base-padding:14%;
+$basic-padding:10px 14%;
+$mini-padding:6px 14%;
+$mega-padding:30px 14%;
+$headerH:50px;
+
+// basic info container
+@mixin flex {
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+@mixin section {
+    position:relative;
+    flex-direction:column;
+    h1,h2{font-weight:500;}
+    h1{ font-size:2em; }
+    h2{ font-size:1.8em; }
+    p{ font-size:1.2em;padding:10px 0; }
+    >div{
+        &:nth-child(1){
+            padding:30px;
+            padding-left:$base-padding;
+            @include mobile-small{padding-left: $base-padding;}
+            @include mobile-large{padding-left: $base-padding;}
+            @include tablet{padding-left: $base-padding;}
+            flex-direction:column;
+        }
+        &:nth-child(2){
+            padding:30px;
+            padding-right:$base-padding;
+            flex-direction:column;
+            @include mobile-small{padding-right: $base-padding;}
+            @include mobile-large{padding-right: $base-padding;}
+            @include tablet{padding-right: $base-padding;}
+        }
+    }
+}
+
+
+
+header {
+    height: $headerH;
+    background: $base-color;
+    background: #fff;
+    padding: $basic-padding;
+    @include flex;
+    .site-info{
+        width:100%;
+        @include flex;
+        justify-content:space-between;
+        font-size:1.4em;
+        @include mobile-small{
+            font-size:1.2em;
+            .contact{display:none;}
+        };
+        @include mobile-large{
+            font-size:1.2em;
+            .contact{display:none;}
+        };
+        @include tablet{
+            font-size:1.2em;
+            .contact{display:none;}
+        };
+        .logo{text-transform:capitalize;}
+        strong{font-weight:600;color:saturate(darken($base-color, 24%),20%);}
+    }
+}
+.landing{
+    padding: $basic-padding;
+    height:70vh;
+    background-image: img-dir('workout-3.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position-y:-100px;
+    @include flex;
+    justify-content:flex-start;
+    @include mobile-small{
+        background-position-y:0;
+        background-position-x:-20px;
+    }
+    @include mobile-large{
+        background-position-y:0;
+        background-position-x:-20px;
+    }
+    @include tablet{ background-position-y:0; }
+    .lead{
+        width:60%;
+        font-size:1.8em;
+        text-transform:capitalize;
+        @include mobile-small{width:100%;font-size:1.4em;};
+        @include mobile-large{width:100%;font-size:1.4em;};
+        @include tablet{width:100%;font-size:1.4em;};
+        h1{
+            color: #31353e;
+            text-shadow: -40px 0 100px #fff, 0 40px 100px #fff, 40px 0 100px #fff, 0 -40px 100px #fff;
+            font-weight:500;
+        }
+        button{
+            color: #fff;
+            font-size:.8em;
+            font-weight: 600;
+            margin-top:10px;
+            padding:8px 20px;
+            border-radius:8px;
+            border:2px solid darken($p-color4, 20%);
+            text-transform:uppercase;
+            background: $p-color4;
+        }
+        ul{
+            li{
+                list-style-position: inside;
+                text-shadow: -10px 0 10px #fff, 0 10px 10px #fff, 10px 0 10px #fff, 0 -10px 10px #fff;
+            }
+        }
+    }
+}
+section{
+    min-height:240px;
+    @include flex;
+    @include section;
+}
+.description{
+    @include flex;
+    @include section;
+    padding:$mega-padding;
+    text-align:center;
+    &.green{
+        @include set-bg(saturate($p-color1, 20%));
+        color:darken($p-color1,45%);
+    }
+}
+.second-section{
+    flex-direction:row;
+    @include mobile-small{flex-direction:column-reverse;};
+    @include mobile-large{flex-direction:column-reverse;};
+    @include tablet{flex-direction:column-reverse;};
+    align-items:stretch;
+    >div{
+        min-height:350px;
+        padding:0 20px;
+        // &:nth-child(1){@include set-bg(darken($p-color2,10%));}
+        &:nth-child(2){
+            background: img-dir('workout-1.jpg');
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position: center;
+        }
+    }
+}
+.form-wrap{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    display:none;
+    .form{
+        transform:translateX(300%);
+        padding:30px 40px;
+        min-width:250px;
+        max-width:250px;
+        background:#fff;
+        border-radius:4px;
+        box-shadow: rgba(0, 0, 0, 0.6) 0 4px 30px 2px;
+        transition:.3s;
+        position:relative;
+        @include mobile-small{
+            min-width:70%;
+            max-width:70%;
+        }
+        @include mobile-large{
+            min-width:70%;
+            max-width:70%;
+        }
+        .title{
+            margin:0;
+            padding-bottom:14px;
+            font-size:1.8em;
+            font-weight:300;
+        }
+        input{width:90%;}
+        button,
+        input[type='submit']{
+            width:100%;
+            padding:8px;
+            border-radius:50px;
+            // color: $p-color;
+            @include set-bg($p-color4);
+            box-shadow: transparentize($p-color2, .5) 0 6px 14px 0;
+        }
+        .links{
+            font-size:1.2em;
+            padding-top:16px;
+            a{
+                color:unset;
+                float:left;
+                clear:both;
+                &:first-child{border-bottom:1px dashed $p-color2;margin-bottom:8px;}
+                // &:nth-child(2){color: $p2-color1;}
+            }
+        }
+        &.show{transform: translateX(0);}
+        >.dismiss{
+            position:absolute;
+            top:0;
+            right:4px;
+            font-size:3em;
+            color:$p-color4;
+        }
+    }
+    &.show{display:flex;}
+}
+
+footer{
+    @include flex;
+    font-size:1.2em;
+    justify-content:flex-end;
+    padding:$basic-padding;
+}

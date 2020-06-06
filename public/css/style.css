@@ -1,0 +1,631 @@
+form.style-1 input[type='text'],
+form.style-1 input[type='email'],
+form.style-1 input[type='password'],
+form.style-1 input[type='number'],
+form.style-1 select,
+form.style-1 textarea {
+  border-bottom: 1px solid;
+}
+
+form.style-2 input[type='text'],
+form.style-2 input[type='email'],
+form.style-2 input[type='password'],
+form.style-2 input[type='number'],
+form.style-2 select,
+form.style-2 textarea {
+  border-radius: 4px;
+}
+
+form input[type='text'],
+form input[type='email'],
+form input[type='password'],
+form input[type='number'],
+form select,
+form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2em;
+  margin-bottom: 14px;
+  background: #dddddd;
+  border: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  resize: none;
+}
+
+form button,
+form input[type='submit'] {
+  display: block;
+  width: auto;
+  font-size: 1.2em;
+  border-radius: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  color: purple;
+}
+
+form textarea {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 89px;
+  max-height: 176px;
+}
+
+form label {
+  color: #e6e6e6 !important;
+}
+
+form *[disabled] {
+  color: #999;
+}
+
+form .status {
+  position: absolute;
+  min-width: 20%;
+  max-width: 90%;
+  min-height: 40px;
+  top: 50px;
+  left: 5%;
+  padding: 10px;
+  border-radius: 16px;
+  background: #fff;
+  color: #31353e;
+  -webkit-box-shadow: rgba(51, 51, 51, 0.5) 0 6px 14px 0;
+          box-shadow: rgba(51, 51, 51, 0.5) 0 6px 14px 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+form .status h3 {
+  font-weight: 500;
+}
+
+form .status p {
+  font-weight: 600;
+}
+
+form .status p:not(:last-child) {
+  color: #db5461;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+form .status .dismiss {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+form .status .dismiss:hover {
+  color: #db5461;
+}
+
+form .status.show {
+  top: -20px;
+  opacity: 1;
+  visibility: visible;
+}
+
+header {
+  height: 50px;
+  background: #58bc82;
+  background: #fff;
+  padding: 10px 14%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .site-info {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.4em;
+}
+
+@media (max-width: 450px) {
+  header .site-info {
+    font-size: 1.2em;
+  }
+  header .site-info .contact {
+    display: none;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 540px) {
+  header .site-info {
+    font-size: 1.2em;
+  }
+  header .site-info .contact {
+    display: none;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+  header .site-info {
+    font-size: 1.2em;
+  }
+  header .site-info .contact {
+    display: none;
+  }
+}
+
+header .site-info .logo {
+  text-transform: capitalize;
+}
+
+header .site-info strong {
+  font-weight: 600;
+  color: #1d7d45;
+}
+
+.landing {
+  padding: 10px 14%;
+  height: 70vh;
+  background-image: url("/storage/images/workout-3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -100px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+@media (max-width: 450px) {
+  .landing {
+    background-position-y: 0;
+    background-position-x: -20px;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 540px) {
+  .landing {
+    background-position-y: 0;
+    background-position-x: -20px;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+  .landing {
+    background-position-y: 0;
+  }
+}
+
+.landing .lead {
+  width: 60%;
+  font-size: 1.8em;
+  text-transform: capitalize;
+}
+
+@media (max-width: 450px) {
+  .landing .lead {
+    width: 100%;
+    font-size: 1.4em;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 540px) {
+  .landing .lead {
+    width: 100%;
+    font-size: 1.4em;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+  .landing .lead {
+    width: 100%;
+    font-size: 1.4em;
+  }
+}
+
+.landing .lead h1 {
+  color: #31353e;
+  text-shadow: -40px 0 100px #fff, 0 40px 100px #fff, 40px 0 100px #fff, 0 -40px 100px #fff;
+  font-weight: 500;
+}
+
+.landing .lead button {
+  color: #fff;
+  font-size: .8em;
+  font-weight: 600;
+  margin-top: 10px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 2px solid #a62330;
+  text-transform: uppercase;
+  background: #db5461;
+}
+
+.landing .lead ul li {
+  list-style-position: inside;
+  text-shadow: -10px 0 10px #fff, 0 10px 10px #fff, 10px 0 10px #fff, 0 -10px 10px #fff;
+}
+
+section {
+  min-height: 240px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section h1, section h2 {
+  font-weight: 500;
+}
+
+section h1 {
+  font-size: 2em;
+}
+
+section h2 {
+  font-size: 1.8em;
+}
+
+section p {
+  font-size: 1.2em;
+  padding: 10px 0;
+}
+
+section > div:nth-child(1) {
+  padding: 30px;
+  padding-left: 14%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 450px) {
+  section > div:nth-child(1) {
+    padding-left: 14%;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 540px) {
+  section > div:nth-child(1) {
+    padding-left: 14%;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+  section > div:nth-child(1) {
+    padding-left: 14%;
+  }
+}
+
+section > div:nth-child(2) {
+  padding: 30px;
+  padding-right: 14%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 450px) {
+  section > div:nth-child(2) {
+    padding-right: 14%;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 540px) {
+  section > div:nth-child(2) {
+    padding-right: 14%;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+  section > div:nth-child(2) {
+    padding-right: 14%;
+  }
+}
+
+.description {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px 14%;
+  text-align: center;
+}
+
+.description h1, .description h2 {
+  font-weight: 500;
+}
+
+.description h1 {
+  font-size: 2em;
+}
+
+.description h2 {
+  font-size: 1.8em;
+}
+
+.description p {
+  font-size: 1.2em;
+  padding: 10px 0;
+}
+
+.description > div:nth-child(1) {
+  padding: 30px;
+  padding-left: 14%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 450px) {
+  .description > div:nth-child(1) {
+    padding-left: 14%;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 540px) {
+  .description > div:nth-child(1) {
+    padding-left: 14%;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+  .description > div:nth-child(1) {
+    padding-left: 14%;
+  }
+}
+
+.description > div:nth-child(2) {
+  padding: 30px;
+  padding-right: 14%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 450px) {
+  .description > div:nth-child(2) {
+    padding-right: 14%;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 540px) {
+  .description > div:nth-child(2) {
+    padding-right: 14%;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+  .description > div:nth-child(2) {
+    padding-right: 14%;
+  }
+}
+
+.description.green {
+  background: #41d37e;
+  color: #fff;
+  color: #0d2116;
+}
+
+.second-section {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+@media (max-width: 450px) {
+  .second-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 540px) {
+  .second-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 768px) {
+  .second-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+.second-section > div {
+  min-height: 350px;
+  padding: 0 20px;
+}
+
+.second-section > div:nth-child(2) {
+  background: url("/storage/images/workout-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.form-wrap {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+
+.form-wrap .form {
+  -webkit-transform: translateX(300%);
+          transform: translateX(300%);
+  padding: 30px 40px;
+  min-width: 250px;
+  max-width: 250px;
+  background: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 4px 30px 2px;
+          box-shadow: rgba(0, 0, 0, 0.6) 0 4px 30px 2px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  position: relative;
+}
+
+@media (max-width: 450px) {
+  .form-wrap .form {
+    min-width: 70%;
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 540px) {
+  .form-wrap .form {
+    min-width: 70%;
+    max-width: 70%;
+  }
+}
+
+.form-wrap .form .title {
+  margin: 0;
+  padding-bottom: 14px;
+  font-size: 1.8em;
+  font-weight: 300;
+}
+
+.form-wrap .form input {
+  width: 90%;
+}
+
+.form-wrap .form button,
+.form-wrap .form input[type='submit'] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 50px;
+  background: #db5461;
+  color: #fff;
+  -webkit-box-shadow: rgba(78, 2, 80, 0.5) 0 6px 14px 0;
+          box-shadow: rgba(78, 2, 80, 0.5) 0 6px 14px 0;
+}
+
+.form-wrap .form .links {
+  font-size: 1.2em;
+  padding-top: 16px;
+}
+
+.form-wrap .form .links a {
+  color: unset;
+  float: left;
+  clear: both;
+}
+
+.form-wrap .form .links a:first-child {
+  border-bottom: 1px dashed #4e0250;
+  margin-bottom: 8px;
+}
+
+.form-wrap .form.show {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.form-wrap .form > .dismiss {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  font-size: 3em;
+  color: #db5461;
+}
+
+.form-wrap.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2em;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 10px 14%;
+}
