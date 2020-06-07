@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = 'https://hop.clickbank.net/?affiliate=yourid&vendor=resurge&lid=3';
 
     /**
      * Create a new controller instance.

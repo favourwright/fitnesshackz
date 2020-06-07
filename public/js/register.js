@@ -32,6 +32,7 @@ function registerSetup(){
         // the function is defined in another js script
         const formDataObj = getFormDataAsOject(this);
         formDataObj.route = $(this).attr('data-route');
+
         console.log(formDataObj);
 
 
@@ -60,15 +61,18 @@ function register(formData){
             password_confirmation: formData.password_confirmation
         }
     ).done((data, status)=>{
+        console.log(data);
         // if user successfully signs up
         if(status=='success'){
             // flast to user that process was done
             $(statusElem).find('.message').html("Registered, redirecting...");
-            // redirect to the hop link
-            window.location.href = data;
+            // redirect to the hop link... pasted it here because of some weird error
+            window.location.href = 'https://hop.clickbank.net/?affiliate=yourid&vendor=resurge&lid=3';
         }
     })
     .fail(( jqXHR, status )=>{
+        console.log(jqXHR);
+
         const error = JSON.parse(jqXHR.responseText);
         $(statusElem).find('.message').html('<p>'+error.message+'</p> <p>'+JSON.stringify(error.errors)+'</p>');
     });
