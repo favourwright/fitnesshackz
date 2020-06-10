@@ -29,7 +29,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'https://hop.clickbank.net/?affiliate=yourid&vendor=resurge&lid=3';
+    protected $redirectTo = RouteServiceProvider::THANK_YOU;
+    // protected $redirectTo = 'https://hop.clickbank.net/?affiliate=yourid&vendor=resurge&lid=3';
 
     /**
      * Create a new controller instance.
@@ -60,14 +61,15 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return void
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $user = new User;
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->password = Hash::make($data['password']);
+        $user->save();
+        return $user;
     }
 }

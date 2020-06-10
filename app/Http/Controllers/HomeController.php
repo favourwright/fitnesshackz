@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -27,7 +27,12 @@ class HomeController extends Controller
         return view('index');
     }
 
-    // the function favour hits when he wants to obtain the emails of registered users
+    /**
+     * The function favour hits when he wants to obtain
+     * the emails of registered users
+     *
+     * @return array $users
+     */
     public function getMails()
     {
         // give access to only his email
@@ -35,5 +40,15 @@ class HomeController extends Controller
             $users = User::all()->pluck('email');
             return $users;
         }
+    }
+
+    /**
+     * The thank you page controller
+     *
+     * @return view
+     */
+    public function thankYou()
+    {
+        return view('thank-you');
     }
 }

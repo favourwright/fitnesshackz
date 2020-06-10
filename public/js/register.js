@@ -67,7 +67,7 @@ function register(formData){
             // flast to user that process was done
             $(statusElem).find('.message').html("Registered, redirecting...");
             // redirect to the hop link... pasted it here because of some weird error
-            window.location.href = 'https://hop.clickbank.net/?affiliate=yourid&vendor=resurge&lid=3';
+            window.location.href = data;
         }
     })
     .fail(( jqXHR, status )=>{

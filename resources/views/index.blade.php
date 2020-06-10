@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{secure_asset('css/boilerplate.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{secure_asset('css/helper.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{secure_asset('css/style.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{secure_asset('icon/style.css')}}" rel="stylesheet" type="text/css">
-    <script src="{{secure_asset('js/jquery-3.5.1.min.js')}}" type="text/jscript"></script>
-    <script src="{{secure_asset('js/formDataAsObject.js')}}" type="text/jscript"></script>
-    <script src="{{secure_asset('js/dismiss-form-status.js')}}" type="text/jscript"></script>
+    {{-- <link rel="shortcut icon" href="{{asset('storage/images/resources/logo.png')}}" type="image/.png" /> --}}
+    <link href="{{asset('css/boilerplate.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/helper.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/style.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('icon/style.css')}}" rel="stylesheet" type="text/css">
+    <script src="{{asset('js/jquery-3.5.1.min.js')}}" type="text/jscript"></script>
+    <script src="{{asset('js/formDataAsObject.js')}}" type="text/jscript"></script>
+    <script src="{{asset('js/dismiss-form-status.js')}}" type="text/jscript"></script>
     <script> $.ajaxSetup({ headers: {"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")} }); </script>
     <title>{{ config('app.name', 'Fitnessfactz') }}</title>
 </head>
@@ -76,18 +77,19 @@
                 </div>
             {!! Form::close() !!}
             {{-- this script also had to be repeated down here for some weird reason, else it won't work --}}
-            <script src="{{secure_asset('js/register.js')}}"></script>
+            {{-- <script src="{{asset('js/register.js')}}"></script> --}}
+            <script type="text/javaScript"src="https://app.getresponse.com/view_webform_v2.js?u=ylFaR&webforms_id=SbaNx" data-webform-id="SbaNx"></script>
         </div>
     </div>
     <footer class="str-col-12">
         <!-- make the copyright dynamic -->
-        <?php $creation_date = 20; $current_date = date("y"); ?>
+        {{$creation_date = 20; $current_date = date("y")}}
         <div class="copyright">
-            <?php if($current_date == $creation_date) { ?>
-            &copy; 2020 Weight loss hackz
-            <?php } else { ?>
-            &copy; 2020 - {{$current_date}} Weight loss hackz
-            <?php } ?>
+            @if($current_date == $creation_date)
+                &copy; 2020 Weight loss hackz
+            @else
+                &copy; 2020 - {{$current_date}} Weight loss hackz
+            @endif
         </div>
     </footer>
 </body>

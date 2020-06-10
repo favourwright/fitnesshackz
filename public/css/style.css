@@ -612,6 +612,39 @@ section > div:nth-child(2) {
   display: flex;
 }
 
+.thank-you {
+  padding: 10px 14%;
+}
+
+.thank-you h1 {
+  font-weight: 500;
+}
+
+@media (max-width: 450px) {
+  .thank-you h1 {
+    font-size: 1.4em;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 540px) {
+  .thank-you h1 {
+    font-size: 1.4em;
+  }
+}
+
+.thank-you span {
+  color: #db5461;
+}
+
+.thank-you a {
+  float: left;
+  margin-top: 10px;
+  font-size: 1.4em;
+  padding: 10px 14px;
+  background: #db5461;
+  color: #fff;
+}
+
 footer {
   position: relative;
   display: -webkit-box;

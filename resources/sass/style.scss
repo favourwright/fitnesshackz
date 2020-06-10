@@ -288,7 +288,23 @@ section{
     }
     &.show{display:flex;}
 }
-
+.thank-you{
+    padding:$basic-padding;
+    h1{
+        font-weight:500;
+        @include mobile-small{font-size:1.4em;}
+        @include mobile-large{font-size:1.4em;}
+    }
+    span{color: $p-color4;}
+    a{
+        float: left;
+        margin-top:10px;
+        font-size:1.4em;
+        padding:10px 14px;
+        background:$p-color4;
+        color:#fff;
+    }
+}
 footer{
     @include flex;
     font-size:1.2em;

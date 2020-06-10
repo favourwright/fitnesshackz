@@ -24,6 +24,13 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/home';
 
     /**
+     * The path to the "thank you page".
+     *
+     * @var string
+     */
+    public const THANK_YOU = '/thank-you';
+
+    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @return void
