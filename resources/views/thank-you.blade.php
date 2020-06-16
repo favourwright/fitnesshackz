@@ -27,10 +27,8 @@
                 Your report will be in your inbox any minute from now <br /><br />
 
                 Hey But befor you go, will you like to checkout this <span>28 days</span>
-                weight loss program 100% designed for women.
-                The main handbook outlines what you need to do for 28 days
-                and this is accompanied by other guides (all optional)
-                that make <span>BE FINALLY FIT</span> a complete weight loss solution
+                weight loss program 100% designed for both men and women.
+                <span>RESURGE</span> is a complete weight loss solution
                 that's focussed on both fast and long-term results.
             </h1>
             <p>

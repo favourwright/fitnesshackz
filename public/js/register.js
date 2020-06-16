@@ -41,7 +41,7 @@ function registerSetup(){
         $(statusElem).addClass('show');
         $(statusElem).find('.message').html("Registering...");
 
-        register(formDataObj);
+        // register(formDataObj);
     });
 }
 
@@ -56,9 +56,7 @@ function register(formData){
         {
             _token: formData._token[0],
             name: formData.name,
-            email: formData.email,
-            password: formData.password,
-            password_confirmation: formData.password_confirmation
+            email: formData.email
         }
     ).done((data, status)=>{
         console.log(data);

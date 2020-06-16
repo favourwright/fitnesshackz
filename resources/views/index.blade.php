@@ -60,30 +60,47 @@
     <div class="form-wrap flex">
         <div class="form">
             <div class="dismiss"><i class="icon-cancel"></i> </div>
+            <form class="register-form style-2"action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+                <!-- Name -->
+                name: <input type="text" name="name"/><br/>
+                <!-- Email field (required) -->
+                email: <input type="text" name="email"/><br/>
+                <!-- List token -->
+                <!-- Get the token at: https://app.getresponse.com/campaign_list.html -->
+                <input type="hidden" name="campaign_token" value="z7LX3" />
+                <!-- Thank you page (optional) -->
+                <input type="hidden" name="thankyou_url" value="https://fitnesshackz.com/thank-you"/>
+                <!-- Add subscriber to the follow-up sequence with a specified day (optional) -->
+                <input type="hidden" name="start_day" value="0" />
+                <!-- Forward form data to your page (optional) -->
+                <input type="hidden" name="forward_data" value="" />
+                <!-- Subscriber button -->
+                <input type="submit" value="Subscribe"/>
+            </form>
+
             {{-- REGISTER FORM --}}
-            {!! Form::open(['id'=>'register', 'class' => 'register-form style-2', 'data-route'=>route("register")]) !!}
-                <h3 class="title flex str-col-12">Register</h3>
+            {{-- {!! Form::open(['id'=>'register', 'class' => 'register-form style-2', 'data-route'=>route("register")]) !!} --}}
+                {{-- <h3 class="title flex str-col-12">Register</h3>
                 {{Form::token()}}
                 {{Form::text('name', '', ['placeholder' => 'Full names ', 'required'])}}
-                {{Form::email('email', '', ['placeholder' => 'Your Email', 'required'])}}
-                {{Form::password('password',['placeholder' => 'Password', 'required'])}}
-                {{Form::password('password_confirmation',['placeholder' => 'Confirm Password', 'required'])}}
+                {{Form::email('email', '', ['placeholder' => 'Your Email', 'required'])}} --}}
                 {{-- below to be replaced with icon --}}
-                {{Form::submit('Register')}}
+                {{-- {{Form::submit('Register')}} --}}
 
-                <div class="status flex unselectable">
+                {{-- <div class="status flex unselectable">
                     <h3 class="message"></h3>
                     <div class="dismiss"> <i class="icon-cancel"></i> </div>
-                </div>
-            {!! Form::close() !!}
+                </div> --}}
+            {{-- {!! Form::close() !!} --}}
             {{-- this script also had to be repeated down here for some weird reason, else it won't work --}}
-            {{-- <script src="{{asset('js/register.js')}}"></script> --}}
-            <script type="text/javaScript"src="https://app.getresponse.com/view_webform_v2.js?u=ylFaR&webforms_id=SbaNx" data-webform-id="SbaNx"></script>
+            <script src="{{asset('js/register.js')}}"></script>
         </div>
     </div>
+
+
     <footer class="str-col-12">
         <!-- make the copyright dynamic -->
-        {{$creation_date = 20; $current_date = date("y")}}
+        <?php $creation_date = 20; $current_date = date("y") ?>
         <div class="copyright">
             @if($current_date == $creation_date)
                 &copy; 2020 Weight loss hackz
